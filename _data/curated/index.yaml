@@ -36,4 +36,35 @@
   url: https://www.infoq.com/news/2016/08/aws-native-sql-backup
   domain: www.infoq.com
   image: ""
+- curated_id: d82b085dd990385b7c0f0d6c4b7ec4bd
+  item_date: "2017-02-09 00:00:00"
+  title: How to get backups with the Compose API and Node.js
+  url: https://www.compose.com/articles/how-to-get-backups-with-the-compose-api-and-node-js/
+  domain: www.compose.com
+  image: ""
+- curated_id: 5c45a0cd478112b71b62ac2e2a3aa406
+  item_date: "2017-02-13 00:00:00"
+  title: On-demand backups with the Compose API and Node.js
+  url: https://www.compose.com/articles/on-demand-backups-with-the-compose-api-and-node-js/
+  domain: www.compose.com
+  image: ""
+- curated_id: c93fd3d0e7c99c56c6479679832492df
+  item_date: "2017-03-14 09:34:19"
+  title: Backup and Sync your Postman Collections on GitHub
+  url: http://blog.getpostman.com/2017/03/10/backup-and-sync-your-postman-collections-on-github/
+  domain: blog.getpostman.com
+  image: ""
+- curated_id: 9bba118555e98817d81e087d5f7b4f62
+  item_date: "2017-03-21 00:00:00"
+  title: Amazon ElastiCache Launches Enhanced Redis Backup and Restore with Cluster
+    Resizing
+  url: https://aws.amazon.com/blogs/aws/launch-amazon-elasticache-launches-enhanced-redis-backup-and-restore-with-cluster-resizing/
+  domain: aws.amazon.com
+  image: ""
+- curated_id: 7b9af28bb67e532a007bed2fe14c0687
+  item_date: "2017-04-25 00:00:00"
+  title: Backup service Rubrik now works natively in AWS and Azure
+  url: https://techcrunch.com/2017/04/25/backup-service-rubrik-now-works-natively-in-aws-and-azure/
+  domain: techcrunch.com
+  image: ""
 ...
