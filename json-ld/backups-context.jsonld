@@ -1,0 +1,131 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "bkp": "https://api-evangelist.github.io/backups/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcat": "https://www.w3.org/ns/dcat#",
+
+    "BackupJob": "bkp:BackupJob",
+    "RecoveryPoint": "bkp:RecoveryPoint",
+    "RestoreJob": "bkp:RestoreJob",
+    "RetentionPolicy": "bkp:RetentionPolicy",
+    "StorageTarget": "bkp:StorageTarget",
+
+    "id": "schema:identifier",
+    "name": "schema:name",
+    "description": "schema:description",
+    "provider": "schema:provider",
+
+    "source_type": {
+      "@id": "bkp:sourceType",
+      "@type": "xsd:string"
+    },
+    "sources": {
+      "@id": "bkp:sources",
+      "@container": "@set"
+    },
+    "target": {
+      "@id": "bkp:target",
+      "@type": "@id"
+    },
+    "schedule": {
+      "@id": "bkp:schedule"
+    },
+    "policy": {
+      "@id": "bkp:policy"
+    },
+    "retention_days": {
+      "@id": "bkp:retentionDays",
+      "@type": "xsd:integer"
+    },
+    "encryption": {
+      "@id": "bkp:encryption"
+    },
+    "status": {
+      "@id": "bkp:status",
+      "@type": "xsd:string"
+    },
+    "last_run": {
+      "@id": "bkp:lastRun"
+    },
+    "job_id": {
+      "@id": "bkp:jobId",
+      "@type": "xsd:string"
+    },
+    "created_at": {
+      "@id": "dcterms:created",
+      "@type": "xsd:dateTime"
+    },
+    "expires_at": {
+      "@id": "bkp:expiresAt",
+      "@type": "xsd:dateTime"
+    },
+    "started_at": {
+      "@id": "bkp:startedAt",
+      "@type": "xsd:dateTime"
+    },
+    "finished_at": {
+      "@id": "bkp:finishedAt",
+      "@type": "xsd:dateTime"
+    },
+    "type": {
+      "@id": "bkp:type",
+      "@type": "xsd:string"
+    },
+    "size_bytes": {
+      "@id": "bkp:sizeBytes",
+      "@type": "xsd:long"
+    },
+    "logical_size_bytes": {
+      "@id": "bkp:logicalSizeBytes",
+      "@type": "xsd:long"
+    },
+    "bytes_transferred": {
+      "@id": "bkp:bytesTransferred",
+      "@type": "xsd:long"
+    },
+    "storage_target": {
+      "@id": "bkp:storageTarget",
+      "@type": "@id"
+    },
+    "immutable": {
+      "@id": "bkp:immutable",
+      "@type": "xsd:boolean"
+    },
+    "immutable_until": {
+      "@id": "bkp:immutableUntil",
+      "@type": "xsd:dateTime"
+    },
+    "verified": {
+      "@id": "bkp:verified",
+      "@type": "xsd:boolean"
+    },
+    "encrypted": {
+      "@id": "bkp:encrypted",
+      "@type": "xsd:boolean"
+    },
+    "algorithm": {
+      "@id": "bkp:algorithm",
+      "@type": "xsd:string"
+    },
+    "key_id": {
+      "@id": "bkp:keyId",
+      "@type": "xsd:string"
+    },
+    "key_management": {
+      "@id": "bkp:keyManagement",
+      "@type": "xsd:string"
+    },
+    "location": {
+      "@id": "schema:location",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "dcat:keyword",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

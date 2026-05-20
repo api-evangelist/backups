@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/backups/refs/heads/main/json-schema/backups-backup-job-schema.json",
+  "title": "BackupJob",
+  "description": "Represents a single backup job that copies data from one or more sources to a backup storage target on a schedule and under a retention policy.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the backup job in the source platform.",
+      "example": "job-9f3c2a1e"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the backup job.",
+      "example": "Nightly VMware Cluster Backup"
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional description of what the job protects and why.",
+      "example": "Nightly full backup of production VMware cluster to on-prem repository with weekly copy to S3."
+    },
+    "provider": {
+      "type": "string",
+      "description": "Backup platform or vendor that owns this job.",
+      "example": "Veeam"
+    },
+    "source_type": {
+      "type": "string",
+      "description": "Type of workload being protected by this job.",
+      "enum": ["vm", "database", "file-system", "object-storage", "saas-tenant", "endpoint", "container", "kubernetes", "application"],
+      "example": "vm"
+    },
+    "sources": {
+      "type": "array",
+      "description": "Identifiers or descriptors of the resources protected by this job.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "vm-prod-app-01" },
+          "name": { "type": "string", "example": "prod-app-01" },
+          "type": { "type": "string", "example": "vm" }
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "description": "Backup storage destination for this job.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["disk", "tape", "object-storage", "cloud", "appliance"],
+          "example": "object-storage"
+        },
+        "name": { "type": "string", "example": "Backblaze B2 - backups-prod bucket" },
+        "location": { "type": "string", "example": "us-west-002" },
+        "immutable": { "type": "boolean", "example": true }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "description": "Schedule definition for the job.",
+      "properties": {
+        "cron": { "type": "string", "example": "0 2 * * *" },
+        "frequency": {
+          "type": "string",
+          "enum": ["continuous", "hourly", "daily", "weekly", "monthly", "manual"],
+          "example": "daily"
+        },
+        "timezone": { "type": "string", "example": "America/Los_Angeles" }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "description": "Retention and backup policy applied to this job.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["full", "incremental", "differential", "synthetic-full", "forever-incremental"],
+          "example": "forever-incremental"
+        },
+        "retention_days": { "type": "integer", "example": 30 },
+        "gfs": {
+          "type": "object",
+          "properties": {
+            "daily": { "type": "integer", "example": 14 },
+            "weekly": { "type": "integer", "example": 4 },
+            "monthly": { "type": "integer", "example": 12 },
+            "yearly": { "type": "integer", "example": 7 }
+          }
+        }
+      }
+    },
+    "encryption": {
+      "type": "object",
+      "description": "Encryption settings for backup data at rest and in transit.",
+      "properties": {
+        "at_rest": { "type": "boolean", "example": true },
+        "in_transit": { "type": "boolean", "example": true },
+        "algorithm": { "type": "string", "example": "AES-256" },
+        "key_management": {
+          "type": "string",
+          "enum": ["provider-managed", "customer-managed", "byok", "hsm"],
+          "example": "customer-managed"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "description": "Current operational status of the job.",
+      "enum": ["enabled", "disabled", "running", "paused", "error"],
+      "example": "enabled"
+    },
+    "last_run": {
+      "type": "object",
+      "description": "Outcome of the most recent execution of this job.",
+      "properties": {
+        "started_at": { "type": "string", "format": "date-time", "example": "2026-05-18T09:00:00Z" },
+        "finished_at": { "type": "string", "format": "date-time", "example": "2026-05-18T09:42:11Z" },
+        "result": {
+          "type": "string",
+          "enum": ["success", "warning", "failure", "partial"],
+          "example": "success"
+        },
+        "bytes_transferred": { "type": "integer", "example": 184739184639 }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Labels used for organization, search, and policy mapping.",
+      "items": { "type": "string" },
+      "example": ["production", "tier-1", "ransomware-protected"]
+    }
+  },
+  "required": ["id", "name", "provider", "source_type", "status"]
+}

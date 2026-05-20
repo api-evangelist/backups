@@ -1,0 +1,155 @@
+aid: backups
+name: Backups
+description: >-
+  An index and topic collection covering backup, disaster recovery, and data protection APIs. Backup APIs enable applications and platforms to schedule, orchestrate, and verify the copying of data from production
+  systems to durable storage targets, manage retention and immutability policies, and recover workloads after incidents ranging from accidental deletion to ransomware. This collection spans enterprise backup
+  platforms like Veeam, Commvault, Rubrik, and Cohesity, SaaS data backup providers like Rewind, OwnBackup, Spanning, and Backupify, endpoint and cloud backup services like Acronis, Druva, and Carbonite,
+  cloud-native backup services from AWS, Azure, and Google Cloud, open-source tools like Restic, BorgBackup, and Duplicati, and storage targets used as backup destinations such as Backblaze B2 and Wasabi.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Backup
+- Disaster Recovery
+- Data Protection
+- Snapshot
+- Archive
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/backups/refs/heads/main/apis.yml
+created: '2026-05-19'
+modified: '2026-05-19'
+specificationVersion: '0.19'
+apis: []
+network:
+- name: Acronis
+  url: https://raw.githubusercontent.com/api-evangelist/acronis/refs/heads/main/apis.yml
+- name: Amazon Data Lifecycle Manager
+  url: https://raw.githubusercontent.com/api-evangelist/amazon-data-lifecycle-manager/refs/heads/main/apis.yml
+- name: Amazon Resilience Hub
+  url: https://raw.githubusercontent.com/api-evangelist/amazon-resilience-hub/refs/heads/main/apis.yml
+- name: Amazon S3 Glacier
+  url: https://raw.githubusercontent.com/api-evangelist/amazon-s3-glacier/refs/heads/main/apis.yml
+- name: Amazon Web Services (AWS)
+  url: https://raw.githubusercontent.com/api-evangelist/amazon-web-services-aws/refs/heads/main/apis.yml
+- name: AWS Backup
+  url: https://raw.githubusercontent.com/api-evangelist/aws-backup/refs/heads/main/apis.yml
+- name: Backblaze
+  url: https://raw.githubusercontent.com/api-evangelist/backblaze/refs/heads/main/apis.yml
+- name: Backupify
+  url: https://raw.githubusercontent.com/api-evangelist/backupify/refs/heads/main/apis.yml
+- name: CloudAlly
+  url: https://raw.githubusercontent.com/api-evangelist/cloudally/refs/heads/main/apis.yml
+- name: Cohesity
+  url: https://raw.githubusercontent.com/api-evangelist/cohesity/refs/heads/main/apis.yml
+- name: Commvault
+  url: https://raw.githubusercontent.com/api-evangelist/commvault/refs/heads/main/apis.yml
+- name: Druva
+  url: https://raw.githubusercontent.com/api-evangelist/druva/refs/heads/main/apis.yml
+- name: EMC
+  url: https://raw.githubusercontent.com/api-evangelist/emc/refs/heads/main/apis.yml
+- name: Google Cloud Firestore
+  url: https://raw.githubusercontent.com/api-evangelist/google-cloud-firestore/refs/heads/main/apis.yml
+- name: Google Cloud Platform
+  url: https://raw.githubusercontent.com/api-evangelist/google-cloud-platform/refs/heads/main/apis.yml
+- name: Keepit
+  url: https://raw.githubusercontent.com/api-evangelist/keepit/refs/heads/main/apis.yml
+- name: Microsoft Azure Backup
+  url: https://raw.githubusercontent.com/api-evangelist/microsoft-azure-backup/refs/heads/main/apis.yml
+- name: Microsoft Azure Migrate
+  url: https://raw.githubusercontent.com/api-evangelist/microsoft-azure-migrate/refs/heads/main/apis.yml
+- name: Microsoft Azure Site Recovery
+  url: https://raw.githubusercontent.com/api-evangelist/microsoft-azure-site-recovery/refs/heads/main/apis.yml
+- name: NetApp
+  url: https://raw.githubusercontent.com/api-evangelist/netapp/refs/heads/main/apis.yml
+- name: OwnBackup
+  url: https://raw.githubusercontent.com/api-evangelist/ownbackup/refs/heads/main/apis.yml
+- name: Scaleway
+  url: https://raw.githubusercontent.com/api-evangelist/scaleway/refs/heads/main/apis.yml
+- name: Solaris Zones
+  url: https://raw.githubusercontent.com/api-evangelist/solaris-zones/refs/heads/main/apis.yml
+- name: Spanning
+  url: https://raw.githubusercontent.com/api-evangelist/spanning/refs/heads/main/apis.yml
+- name: Spin.AI
+  url: https://raw.githubusercontent.com/api-evangelist/spin-ai/refs/heads/main/apis.yml
+- name: Sybase
+  url: https://raw.githubusercontent.com/api-evangelist/sybase/refs/heads/main/apis.yml
+- name: Trellix
+  url: https://raw.githubusercontent.com/api-evangelist/trellix/refs/heads/main/apis.yml
+- name: Veritas NetBackup
+  url: https://raw.githubusercontent.com/api-evangelist/veritas-netbackup/refs/heads/main/apis.yml
+- name: VMware
+  url: https://raw.githubusercontent.com/api-evangelist/vmware/refs/heads/main/apis.yml
+- name: Veeam
+  url: https://raw.githubusercontent.com/api-evangelist/veeam/refs/heads/main/apis.yml
+- name: Rubrik
+  url: https://raw.githubusercontent.com/api-evangelist/rubrik/refs/heads/main/apis.yml
+- name: HYCU
+  url: https://raw.githubusercontent.com/api-evangelist/hycu/refs/heads/main/apis.yml
+- name: Rewind
+  url: https://raw.githubusercontent.com/api-evangelist/rewind/refs/heads/main/apis.yml
+- name: Wasabi
+  url: https://raw.githubusercontent.com/api-evangelist/wasabi/refs/heads/main/apis.yml
+- name: Restic
+  url: https://raw.githubusercontent.com/api-evangelist/restic/refs/heads/main/apis.yml
+- name: BorgBackup
+  url: https://raw.githubusercontent.com/api-evangelist/borgbackup/refs/heads/main/apis.yml
+- name: Duplicati
+  url: https://raw.githubusercontent.com/api-evangelist/duplicati/refs/heads/main/apis.yml
+- name: Carbonite
+  url: https://raw.githubusercontent.com/api-evangelist/carbonite/refs/heads/main/apis.yml
+common:
+- type: Portal
+  url: https://apievangelist.com
+- type: GitHubOrganization
+  url: https://github.com/api-evangelist
+- type: Features
+  data:
+  - name: Backup Job Orchestration
+    description: Backup APIs schedule, trigger, and monitor backup jobs across servers, virtual machines, databases, SaaS tenants, and endpoints, with policy-driven recurrence and dependency management.
+  - name: Recovery Point Management
+    description: APIs enumerate and inspect recovery points (snapshots, restore points, incremental chains) so that operators and automation can pick the right point in time for granular or full recovery.
+  - name: Retention and Lifecycle Policies
+    description: Backup platforms expose retention rules, GFS (grandfather-father-son) schedules, and lifecycle transitions that move data between hot, cold, and archive tiers like S3 Glacier or Azure Archive.
+  - name: Immutability and Ransomware Protection
+    description: Modern backup APIs configure object lock, WORM storage, air-gapped copies, and anomaly detection to defend recovery data against ransomware and insider tampering.
+  - name: SaaS Data Backup
+    description: SaaS-focused providers like Rewind, OwnBackup, Spanning, and Backupify back up Salesforce, Microsoft 365, Google Workspace, GitHub, Shopify, and other tenant data through vendor APIs.
+  - name: Disaster Recovery Orchestration
+    description: DR APIs from AWS, Azure, VMware, and Veeam coordinate failover, failback, runbook execution, and recovery validation across primary and secondary sites or cloud regions.
+  - name: Cross-Cloud and Hybrid Targets
+    description: Backup APIs write to a mix of on-prem appliances, object storage (Backblaze B2, Wasabi, S3, Azure Blob), and cloud-native services, enabling 3-2-1 strategies across providers.
+- type: UseCases
+  data:
+  - name: Ransomware Recovery
+    description: Organizations use backup APIs to identify the most recent clean recovery point after a ransomware event and orchestrate restore of affected VMs, files, and databases at scale.
+  - name: SaaS Tenant Protection
+    description: SMBs and enterprises run SaaS backup APIs to protect Microsoft 365 mailboxes, SharePoint sites, Google Workspace drives, and Salesforce records against accidental deletion and malicious actors.
+  - name: Cross-Region Disaster Recovery
+    description: Operators use APIs like AWS Backup, Azure Site Recovery, and Veeam to replicate workloads across regions and execute scheduled DR drills with measurable RPO and RTO.
+  - name: Long-Term Archival and Compliance
+    description: Regulated industries push immutable backup copies to archive tiers (S3 Glacier, Azure Archive, B2) via backup APIs to satisfy retention mandates under HIPAA, SOX, GDPR, and FINRA.
+  - name: Endpoint and Remote Worker Backup
+    description: Endpoint backup APIs from Druva, Acronis, and Carbonite protect laptops and remote devices and let IT centrally restore files after device loss or compromise.
+  - name: Database and VM Snapshot Automation
+    description: Platform engineers script database, VM, and volume snapshots via cloud-native APIs (Amazon DLM, Azure Backup, NetApp) and integrate them into CI/CD and pre-change checkpoints.
+- type: Integrations
+  data:
+  - name: Veeam
+    description: Backup, replication, and disaster recovery platform for VMs, physical servers, cloud workloads, and Microsoft 365 with a comprehensive REST API.
+  - name: Commvault
+    description: Enterprise data protection and backup platform with REST APIs for jobs, clients, storage policies, and disaster recovery orchestration.
+  - name: Rubrik
+    description: Cloud data management and backup platform with REST APIs covering SLA domains, snapshots, recovery, and ransomware investigation.
+  - name: Cohesity
+    description: Hyperconverged data protection and backup platform with REST APIs for protection jobs, sources, views, and recovery operations.
+  - name: AWS Backup
+    description: Centralized, policy-based AWS service that automates backup of EBS, RDS, DynamoDB, EFS, S3, and other AWS resources via API and IaC.
+  - name: Microsoft Azure Backup
+    description: Azure-native backup service that protects VMs, files, SQL, and SAP HANA workloads, with REST APIs for vaults, policies, and recovery points.
+  - name: Druva
+    description: SaaS-delivered data protection for endpoints, data centers, and cloud workloads with APIs for backups, restores, and compliance reporting.
+  - name: Backblaze B2
+    description: Low-cost cloud object storage commonly used as a backup target via S3-compatible APIs, supporting object lock and lifecycle rules.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+humanURL: https://apievangelist.com

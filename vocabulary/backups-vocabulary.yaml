@@ -1,0 +1,352 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Backups
+  description: Vocabulary for the backups topic, covering backup, disaster recovery, and data protection platforms across enterprise, SaaS, cloud-native, and open-source ecosystems.
+  created: '2026-05-19'
+  modified: '2026-05-19'
+
+operational:
+  apis:
+    - name: Veeam Data Platform
+      namespace: veeam
+      status: active
+    - name: Commvault Data Protection
+      namespace: commvault
+      status: active
+    - name: Rubrik Security Cloud
+      namespace: rubrik
+      status: active
+    - name: Cohesity DataProtect
+      namespace: cohesity
+      status: active
+    - name: AWS Backup
+      namespace: aws-backup
+      status: active
+    - name: Microsoft Azure Backup
+      namespace: microsoft-azure-backup
+      status: active
+    - name: Druva Data Resiliency Cloud
+      namespace: druva
+      status: active
+    - name: Backblaze B2
+      namespace: backblaze
+      status: active
+
+  resources:
+    - name: backup-jobs
+      description: Scheduled or on-demand backup operations that copy data to a backup target
+      actions:
+        - list
+        - get
+        - create
+        - update
+        - delete
+        - run
+        - cancel
+    - name: recovery-points
+      description: Snapshots or restore points produced by backup jobs and available for recovery
+      actions:
+        - list
+        - get
+        - delete
+        - verify
+        - lock
+    - name: restore-jobs
+      description: Operations that restore data from a recovery point to an original or alternate location
+      actions:
+        - create
+        - get
+        - list
+        - cancel
+    - name: retention-policies
+      description: Rules describing how long recovery points are kept and when they transition or expire
+      actions:
+        - list
+        - get
+        - create
+        - update
+        - delete
+    - name: storage-targets
+      description: Destinations where backup data is written, including disks, tapes, appliances, and cloud object stores
+      actions:
+        - list
+        - get
+        - create
+        - update
+        - delete
+    - name: protected-resources
+      description: Workloads (VMs, databases, file systems, SaaS tenants, endpoints) registered for protection
+      actions:
+        - list
+        - get
+        - register
+        - deregister
+    - name: dr-plans
+      description: Disaster recovery plans, runbooks, and failover orchestrations
+      actions:
+        - list
+        - get
+        - create
+        - update
+        - run
+        - test
+
+  actions:
+    - name: list
+      description: Enumerate resources
+      httpMethod: GET
+      pattern: read
+    - name: get
+      description: Retrieve a single resource
+      httpMethod: GET
+      pattern: read
+    - name: create
+      description: Create a new resource
+      httpMethod: POST
+      pattern: write
+    - name: update
+      description: Update an existing resource
+      httpMethod: PUT
+      pattern: write
+    - name: delete
+      description: Remove a resource
+      httpMethod: DELETE
+      pattern: destructive
+    - name: run
+      description: Trigger an on-demand execution (backup or restore)
+      httpMethod: POST
+      pattern: write
+    - name: cancel
+      description: Cancel a running job
+      httpMethod: POST
+      pattern: write
+    - name: verify
+      description: Verify the integrity or restorability of a recovery point
+      httpMethod: POST
+      pattern: read
+    - name: lock
+      description: Apply object lock or WORM hold to a recovery point
+      httpMethod: POST
+      pattern: write
+    - name: register
+      description: Register a workload for protection
+      httpMethod: POST
+      pattern: write
+    - name: deregister
+      description: Remove a workload from protection
+      httpMethod: DELETE
+      pattern: destructive
+    - name: test
+      description: Test a DR plan without affecting production
+      httpMethod: POST
+      pattern: read
+
+  schemas:
+    core:
+      - name: BackupJob
+        description: A scheduled or on-demand backup operation
+        properties:
+          - id
+          - name
+          - provider
+          - source_type
+          - sources
+          - target
+          - schedule
+          - policy
+          - encryption
+          - status
+          - last_run
+          - tags
+      - name: RecoveryPoint
+        description: A snapshot, restore point, or backup image available for recovery
+        properties:
+          - id
+          - job_id
+          - provider
+          - source
+          - created_at
+          - expires_at
+          - type
+          - size_bytes
+          - storage_target
+          - immutable_until
+          - encryption
+          - verified
+          - tags
+
+  enums:
+    source_types:
+      - vm
+      - database
+      - file-system
+      - object-storage
+      - saas-tenant
+      - endpoint
+      - container
+      - kubernetes
+      - application
+    target_types:
+      - disk
+      - tape
+      - object-storage
+      - cloud
+      - appliance
+      - archive
+    backup_types:
+      - full
+      - incremental
+      - differential
+      - synthetic-full
+      - forever-incremental
+      - snapshot
+    job_statuses:
+      - enabled
+      - disabled
+      - running
+      - paused
+      - error
+    job_results:
+      - success
+      - warning
+      - failure
+      - partial
+    frequencies:
+      - continuous
+      - hourly
+      - daily
+      - weekly
+      - monthly
+      - manual
+    key_management_modes:
+      - provider-managed
+      - customer-managed
+      - byok
+      - hsm
+
+capability:
+  workflows:
+    - name: Ransomware Recovery
+      description: Identify a clean recovery point and orchestrate restore of affected workloads after a ransomware incident
+      apis:
+        - veeam
+        - rubrik
+        - cohesity
+      personas:
+        - Backup Administrator
+        - Incident Responder
+      domains:
+        - Disaster Recovery
+        - Data Protection
+    - name: SaaS Tenant Protection
+      description: Configure backups for Microsoft 365, Google Workspace, Salesforce, and other SaaS tenants
+      apis:
+        - druva
+        - ownbackup
+        - spanning
+        - backupify
+      personas:
+        - SaaS Administrator
+      domains:
+        - SaaS Backup
+    - name: Cross-Region Disaster Recovery
+      description: Replicate workloads across regions and execute scheduled DR drills with measurable RPO/RTO
+      apis:
+        - aws-backup
+        - microsoft-azure-site-recovery
+        - veeam
+      personas:
+        - Disaster Recovery Engineer
+      domains:
+        - Disaster Recovery
+    - name: Long-Term Archival
+      description: Push immutable backup copies to archive tiers for retention compliance
+      apis:
+        - amazon-s3-glacier
+        - backblaze
+        - aws-backup
+      personas:
+        - Compliance Officer
+        - Backup Administrator
+      domains:
+        - Archive
+        - Compliance
+
+  personas:
+    - id: backup-administrator
+      name: Backup Administrator
+      description: Operators who configure, monitor, and troubleshoot backup jobs and storage targets
+      workflows:
+        - Ransomware Recovery
+        - Long-Term Archival
+    - id: disaster-recovery-engineer
+      name: Disaster Recovery Engineer
+      description: Engineers who design and exercise DR plans and failover orchestrations
+      workflows:
+        - Cross-Region Disaster Recovery
+    - id: saas-administrator
+      name: SaaS Administrator
+      description: Administrators of SaaS platforms responsible for protecting tenant data
+      workflows:
+        - SaaS Tenant Protection
+    - id: incident-responder
+      name: Incident Responder
+      description: Security and operations staff who respond to data-loss events including ransomware
+      workflows:
+        - Ransomware Recovery
+    - id: compliance-officer
+      name: Compliance Officer
+      description: Staff responsible for retention, audit, and regulatory compliance of backup data
+      workflows:
+        - Long-Term Archival
+
+  domains:
+    - name: Data Protection
+      description: Backup, replication, and verification of operational data sets
+    - name: Disaster Recovery
+      description: Cross-site and cross-region recovery orchestration after major incidents
+    - name: SaaS Backup
+      description: Backup of SaaS tenant data via vendor APIs
+    - name: Archive
+      description: Long-term, low-cost retention of backup data on archive tiers
+    - name: Compliance
+      description: Retention, immutability, and audit obligations for backup data
+
+crossReference:
+  - resource: backup-jobs
+    operations:
+      - list
+      - get
+      - create
+      - run
+    workflows:
+      - Ransomware Recovery
+      - SaaS Tenant Protection
+      - Cross-Region Disaster Recovery
+    personas:
+      - Backup Administrator
+      - SaaS Administrator
+  - resource: recovery-points
+    operations:
+      - list
+      - get
+      - verify
+      - lock
+    workflows:
+      - Ransomware Recovery
+      - Long-Term Archival
+    personas:
+      - Backup Administrator
+      - Incident Responder
+  - resource: restore-jobs
+    operations:
+      - create
+      - get
+      - list
+    workflows:
+      - Ransomware Recovery
+      - Cross-Region Disaster Recovery
+    personas:
+      - Incident Responder
+      - Disaster Recovery Engineer

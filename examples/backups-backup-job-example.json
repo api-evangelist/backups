@@ -1,0 +1,47 @@
+{
+  "id": "job-9f3c2a1e",
+  "name": "Nightly VMware Cluster Backup",
+  "description": "Nightly forever-incremental backup of production VMware cluster to on-prem repository with weekly copy to Backblaze B2.",
+  "provider": "Veeam",
+  "source_type": "vm",
+  "sources": [
+    { "id": "vm-prod-app-01", "name": "prod-app-01", "type": "vm" },
+    { "id": "vm-prod-app-02", "name": "prod-app-02", "type": "vm" },
+    { "id": "vm-prod-db-01", "name": "prod-db-01", "type": "vm" }
+  ],
+  "target": {
+    "type": "object-storage",
+    "name": "Backblaze B2 - backups-prod bucket",
+    "location": "us-west-002",
+    "immutable": true
+  },
+  "schedule": {
+    "cron": "0 2 * * *",
+    "frequency": "daily",
+    "timezone": "America/Los_Angeles"
+  },
+  "policy": {
+    "type": "forever-incremental",
+    "retention_days": 30,
+    "gfs": {
+      "daily": 14,
+      "weekly": 4,
+      "monthly": 12,
+      "yearly": 7
+    }
+  },
+  "encryption": {
+    "at_rest": true,
+    "in_transit": true,
+    "algorithm": "AES-256",
+    "key_management": "customer-managed"
+  },
+  "status": "enabled",
+  "last_run": {
+    "started_at": "2026-05-18T09:00:00Z",
+    "finished_at": "2026-05-18T09:42:11Z",
+    "result": "success",
+    "bytes_transferred": 184739184639
+  },
+  "tags": ["production", "tier-1", "ransomware-protected"]
+}

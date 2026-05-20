@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/backups/refs/heads/main/json-schema/backups-recovery-point-schema.json",
+  "title": "RecoveryPoint",
+  "description": "Represents a single recovery point (snapshot, restore point, or backup image) produced by a backup job and available for restore.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the recovery point.",
+      "example": "rp-2026-05-18-090000-prod-app-01"
+    },
+    "job_id": {
+      "type": "string",
+      "description": "Identifier of the backup job that created this recovery point.",
+      "example": "job-9f3c2a1e"
+    },
+    "provider": {
+      "type": "string",
+      "description": "Backup platform that owns this recovery point.",
+      "example": "Veeam"
+    },
+    "source": {
+      "type": "object",
+      "description": "Resource that was protected at the time this recovery point was created.",
+      "properties": {
+        "id": { "type": "string", "example": "vm-prod-app-01" },
+        "name": { "type": "string", "example": "prod-app-01" },
+        "type": {
+          "type": "string",
+          "enum": ["vm", "database", "file-system", "object-storage", "saas-tenant", "endpoint", "container", "kubernetes", "application"],
+          "example": "vm"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time at which the recovery point was created.",
+      "example": "2026-05-18T09:42:11Z"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time at which the recovery point will be deleted under the retention policy, if any.",
+      "example": "2026-06-17T09:42:11Z"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of recovery point image.",
+      "enum": ["full", "incremental", "differential", "synthetic-full", "snapshot"],
+      "example": "incremental"
+    },
+    "size_bytes": {
+      "type": "integer",
+      "description": "On-disk size of the recovery point in bytes (after dedupe and compression).",
+      "example": 18473918463
+    },
+    "logical_size_bytes": {
+      "type": "integer",
+      "description": "Logical (pre-dedupe, pre-compression) size of the protected data set.",
+      "example": 184739184639
+    },
+    "storage_target": {
+      "type": "object",
+      "description": "Storage location holding this recovery point.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["disk", "tape", "object-storage", "cloud", "appliance", "archive"],
+          "example": "object-storage"
+        },
+        "name": { "type": "string", "example": "Backblaze B2 - backups-prod" },
+        "location": { "type": "string", "example": "us-west-002" }
+      }
+    },
+    "immutable_until": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Object-lock or WORM expiration time, before which the recovery point cannot be deleted.",
+      "example": "2026-06-17T09:42:11Z"
+    },
+    "encryption": {
+      "type": "object",
+      "description": "Encryption status of this recovery point.",
+      "properties": {
+        "encrypted": { "type": "boolean", "example": true },
+        "algorithm": { "type": "string", "example": "AES-256" },
+        "key_id": { "type": "string", "example": "kms-key-2f9a" }
+      }
+    },
+    "verified": {
+      "type": "boolean",
+      "description": "Whether the recovery point has been integrity-verified or test-restored.",
+      "example": true
+    },
+    "tags": {
+      "type": "array",
+      "description": "Labels used for organization, search, and policy mapping.",
+      "items": { "type": "string" },
+      "example": ["production", "monthly", "ransomware-protected"]
+    }
+  },
+  "required": ["id", "job_id", "provider", "created_at", "type"]
+}
