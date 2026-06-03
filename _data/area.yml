@@ -1,0 +1,215 @@
+meta:
+  name: Backups
+  description: An index and topic collection covering backup, disaster recovery, and
+    data protection APIs. Backup APIs enable applications and platforms to schedule,
+    orchestrate, and verify the copying of data from production systems to durable
+    storage targets, manage retention and immutability policies, and recover workloads
+    after incidents ranging from accidental deletion to ransomware. This collection
+    spans enterprise backup platforms like Veeam, Commvault, Rubrik, and Cohesity,
+    SaaS data backup providers like Rewind, OwnBackup, Spanning, and Backupify, endpoint
+    and cloud backup services like Acronis, Druva, and Carbonite, cloud-native backup
+    services from AWS, Azure, and Google Cloud, open-source tools like Restic, BorgBackup,
+    and Duplicati, and storage targets used as backup destinations such as Backblaze
+    B2 and Wasabi.
+  tags:
+  - Backup
+  - Disaster Recovery
+  - Data Protection
+  - Snapshot
+  - Archive
+  portal: https://apievangelist.com
+  github: https://github.com/api-evangelist
+  repo: backups
+services_tools:
+- name: Acronis
+  repo: https://github.com/api-evangelist/acronis
+  apisio: https://providers.apis.io/providers/acronis/
+- name: Amazon Data Lifecycle Manager
+  repo: https://github.com/api-evangelist/amazon-data-lifecycle-manager
+  apisio: https://providers.apis.io/providers/amazon-data-lifecycle-manager/
+- name: Amazon Resilience Hub
+  repo: https://github.com/api-evangelist/amazon-resilience-hub
+  apisio: https://providers.apis.io/providers/amazon-resilience-hub/
+- name: Amazon S3 Glacier
+  repo: https://github.com/api-evangelist/amazon-s3-glacier
+  apisio: https://providers.apis.io/providers/amazon-s3-glacier/
+- name: Amazon Web Services (AWS)
+  repo: https://github.com/api-evangelist/amazon-web-services-aws
+  apisio: https://providers.apis.io/providers/amazon-web-services-aws/
+- name: AWS Backup
+  repo: https://github.com/api-evangelist/aws-backup
+  apisio: https://providers.apis.io/providers/aws-backup/
+- name: Backblaze
+  repo: https://github.com/api-evangelist/backblaze
+  apisio: https://providers.apis.io/providers/backblaze/
+- name: Backupify
+  repo: https://github.com/api-evangelist/backupify
+  apisio: https://providers.apis.io/providers/backupify/
+- name: CloudAlly
+  repo: https://github.com/api-evangelist/cloudally
+  apisio: https://providers.apis.io/providers/cloudally/
+- name: Cohesity
+  repo: https://github.com/api-evangelist/cohesity
+  apisio: https://providers.apis.io/providers/cohesity/
+- name: Commvault
+  repo: https://github.com/api-evangelist/commvault
+  apisio: https://providers.apis.io/providers/commvault/
+- name: Druva
+  repo: https://github.com/api-evangelist/druva
+  apisio: https://providers.apis.io/providers/druva/
+- name: EMC
+  repo: https://github.com/api-evangelist/emc
+  apisio: https://providers.apis.io/providers/emc/
+- name: Google Cloud Firestore
+  repo: https://github.com/api-evangelist/google-cloud-firestore
+  apisio: https://providers.apis.io/providers/google-cloud-firestore/
+- name: Google Cloud Platform
+  repo: https://github.com/api-evangelist/google-cloud-platform
+  apisio: https://providers.apis.io/providers/google-cloud-platform/
+- name: Keepit
+  repo: https://github.com/api-evangelist/keepit
+  apisio: https://providers.apis.io/providers/keepit/
+- name: Microsoft Azure Backup
+  repo: https://github.com/api-evangelist/microsoft-azure-backup
+  apisio: https://providers.apis.io/providers/microsoft-azure-backup/
+- name: Microsoft Azure Migrate
+  repo: https://github.com/api-evangelist/microsoft-azure-migrate
+  apisio: https://providers.apis.io/providers/microsoft-azure-migrate/
+- name: Microsoft Azure Site Recovery
+  repo: https://github.com/api-evangelist/microsoft-azure-site-recovery
+  apisio: https://providers.apis.io/providers/microsoft-azure-site-recovery/
+- name: NetApp
+  repo: https://github.com/api-evangelist/netapp
+  apisio: https://providers.apis.io/providers/netapp/
+- name: OwnBackup
+  repo: https://github.com/api-evangelist/ownbackup
+  apisio: https://providers.apis.io/providers/ownbackup/
+- name: Scaleway
+  repo: https://github.com/api-evangelist/scaleway
+  apisio: https://providers.apis.io/providers/scaleway/
+- name: Solaris Zones
+  repo: https://github.com/api-evangelist/solaris-zones
+  apisio: https://providers.apis.io/providers/solaris-zones/
+- name: Spanning
+  repo: https://github.com/api-evangelist/spanning
+  apisio: https://providers.apis.io/providers/spanning/
+- name: Spin.AI
+  repo: https://github.com/api-evangelist/spin-ai
+  apisio: https://providers.apis.io/providers/spin-ai/
+- name: Sybase
+  repo: https://github.com/api-evangelist/sybase
+  apisio: https://providers.apis.io/providers/sybase/
+- name: Trellix
+  repo: https://github.com/api-evangelist/trellix
+  apisio: https://providers.apis.io/providers/trellix/
+- name: Veritas NetBackup
+  repo: https://github.com/api-evangelist/veritas-netbackup
+  apisio: https://providers.apis.io/providers/veritas-netbackup/
+- name: VMware
+  repo: https://github.com/api-evangelist/vmware
+  apisio: https://providers.apis.io/providers/vmware/
+- name: Veeam
+  repo: https://github.com/api-evangelist/veeam
+  apisio: https://providers.apis.io/providers/veeam/
+- name: Rubrik
+  repo: https://github.com/api-evangelist/rubrik
+  apisio: https://providers.apis.io/providers/rubrik/
+- name: HYCU
+  repo: https://github.com/api-evangelist/hycu
+  apisio: https://providers.apis.io/providers/hycu/
+- name: Rewind
+  repo: https://github.com/api-evangelist/rewind
+  apisio: https://providers.apis.io/providers/rewind/
+- name: Wasabi
+  repo: https://github.com/api-evangelist/wasabi
+  apisio: https://providers.apis.io/providers/wasabi/
+- name: Restic
+  repo: https://github.com/api-evangelist/restic
+  apisio: https://providers.apis.io/providers/restic/
+- name: BorgBackup
+  repo: https://github.com/api-evangelist/borgbackup
+  apisio: https://providers.apis.io/providers/borgbackup/
+- name: Duplicati
+  repo: https://github.com/api-evangelist/duplicati
+  apisio: https://providers.apis.io/providers/duplicati/
+- name: Carbonite
+  repo: https://github.com/api-evangelist/carbonite
+  apisio: https://providers.apis.io/providers/carbonite/
+features:
+- name: Backup Job Orchestration
+  description: Backup APIs schedule, trigger, and monitor backup jobs across servers,
+    virtual machines, databases, SaaS tenants, and endpoints, with policy-driven recurrence
+    and dependency management.
+- name: Recovery Point Management
+  description: APIs enumerate and inspect recovery points (snapshots, restore points,
+    incremental chains) so that operators and automation can pick the right point
+    in time for granular or full recovery.
+- name: Retention and Lifecycle Policies
+  description: Backup platforms expose retention rules, GFS (grandfather-father-son)
+    schedules, and lifecycle transitions that move data between hot, cold, and archive
+    tiers like S3 Glacier or Azure Archive.
+- name: Immutability and Ransomware Protection
+  description: Modern backup APIs configure object lock, WORM storage, air-gapped
+    copies, and anomaly detection to defend recovery data against ransomware and insider
+    tampering.
+- name: SaaS Data Backup
+  description: SaaS-focused providers like Rewind, OwnBackup, Spanning, and Backupify
+    back up Salesforce, Microsoft 365, Google Workspace, GitHub, Shopify, and other
+    tenant data through vendor APIs.
+- name: Disaster Recovery Orchestration
+  description: DR APIs from AWS, Azure, VMware, and Veeam coordinate failover, failback,
+    runbook execution, and recovery validation across primary and secondary sites
+    or cloud regions.
+- name: Cross-Cloud and Hybrid Targets
+  description: Backup APIs write to a mix of on-prem appliances, object storage (Backblaze
+    B2, Wasabi, S3, Azure Blob), and cloud-native services, enabling 3-2-1 strategies
+    across providers.
+use_cases:
+- name: Ransomware Recovery
+  description: Organizations use backup APIs to identify the most recent clean recovery
+    point after a ransomware event and orchestrate restore of affected VMs, files,
+    and databases at scale.
+- name: SaaS Tenant Protection
+  description: SMBs and enterprises run SaaS backup APIs to protect Microsoft 365
+    mailboxes, SharePoint sites, Google Workspace drives, and Salesforce records against
+    accidental deletion and malicious actors.
+- name: Cross-Region Disaster Recovery
+  description: Operators use APIs like AWS Backup, Azure Site Recovery, and Veeam
+    to replicate workloads across regions and execute scheduled DR drills with measurable
+    RPO and RTO.
+- name: Long-Term Archival and Compliance
+  description: Regulated industries push immutable backup copies to archive tiers
+    (S3 Glacier, Azure Archive, B2) via backup APIs to satisfy retention mandates
+    under HIPAA, SOX, GDPR, and FINRA.
+- name: Endpoint and Remote Worker Backup
+  description: Endpoint backup APIs from Druva, Acronis, and Carbonite protect laptops
+    and remote devices and let IT centrally restore files after device loss or compromise.
+- name: Database and VM Snapshot Automation
+  description: Platform engineers script database, VM, and volume snapshots via cloud-native
+    APIs (Amazon DLM, Azure Backup, NetApp) and integrate them into CI/CD and pre-change
+    checkpoints.
+integrations:
+- name: Veeam
+  description: Backup, replication, and disaster recovery platform for VMs, physical
+    servers, cloud workloads, and Microsoft 365 with a comprehensive REST API.
+- name: Commvault
+  description: Enterprise data protection and backup platform with REST APIs for jobs,
+    clients, storage policies, and disaster recovery orchestration.
+- name: Rubrik
+  description: Cloud data management and backup platform with REST APIs covering SLA
+    domains, snapshots, recovery, and ransomware investigation.
+- name: Cohesity
+  description: Hyperconverged data protection and backup platform with REST APIs for
+    protection jobs, sources, views, and recovery operations.
+- name: AWS Backup
+  description: Centralized, policy-based AWS service that automates backup of EBS,
+    RDS, DynamoDB, EFS, S3, and other AWS resources via API and IaC.
+- name: Microsoft Azure Backup
+  description: Azure-native backup service that protects VMs, files, SQL, and SAP
+    HANA workloads, with REST APIs for vaults, policies, and recovery points.
+- name: Druva
+  description: SaaS-delivered data protection for endpoints, data centers, and cloud
+    workloads with APIs for backups, restores, and compliance reporting.
+- name: Backblaze B2
+  description: Low-cost cloud object storage commonly used as a backup target via
+    S3-compatible APIs, supporting object lock and lifecycle rules.

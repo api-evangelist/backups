@@ -1,0 +1,26 @@
+title: Backups
+description: An index and topic collection covering backup, disaster recovery, and
+  data protection APIs. Backup APIs enable applications and platforms to schedule,
+  orchestrate, and verify the copying of data from production systems to durable storage
+  targets, manage retention and immutability policies, and recover workloads after
+  incidents ranging from accidental deletion to ransomware. This collection spans
+  enterprise backup platforms like Veeam, Commvault, Rubrik, and Cohesity, SaaS data
+  backup providers like Rewind, OwnBackup, Spanning, and Backupify, endpoint and cloud
+  backup services like Acronis, Druva, and Carbonite, cloud-native backup services
+  from AWS, Azure, and Google Cloud, open-source tools like Restic, BorgBackup, and
+  Duplicati, and storage targets used as backup destinations such as Backblaze B2
+  and Wasabi.
+url: https://backups.apievangelist.com
+collections:
+  api_stories:
+    output: false
+exclude:
+- README.md
+- Gemfile
+- Gemfile.lock
+- Dockerfile
+- examples
+- json-ld
+- json-schema
+- json-structure
+- vocabulary
