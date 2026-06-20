@@ -6,7 +6,7 @@ description: >-
   platforms like Veeam, Commvault, Rubrik, and Cohesity, SaaS data backup providers like Rewind, OwnBackup, Spanning, and Backupify, endpoint and cloud backup services like Acronis, Druva, and Carbonite,
   cloud-native backup services from AWS, Azure, and Google Cloud, open-source tools like Restic, BorgBackup, and Duplicati, and storage targets used as backup destinations such as Backblaze B2 and Wasabi.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Backup
 - Disaster Recovery
