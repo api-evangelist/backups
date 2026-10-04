@@ -12,6 +12,12 @@ tags:
 - Disaster Recovery
 - Data Protection
 - Snapshot
+- Archives
+tags_raw:
+- Backup
+- Disaster Recovery
+- Data Protection
+- Snapshot
 - Archive
 url: >-
   https://raw.githubusercontent.com/api-evangelist/backups/refs/heads/main/apis.yml
