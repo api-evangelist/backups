@@ -1,5 +1,6 @@
 aid: backups
 name: Backups
+kind: topic
 description: >-
   An index and topic collection covering backup, disaster recovery, and data protection APIs. Backup APIs enable applications and platforms to schedule, orchestrate, and verify the copying of data from production
   systems to durable storage targets, manage retention and immutability policies, and recover workloads after incidents ranging from accidental deletion to ransomware. This collection spans enterprise backup
